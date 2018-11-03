@@ -118,8 +118,8 @@ describe('DELETE /todos/:id', () => {
                     return done(err);
                 }
 
-                Todo.find().then((todos) => {
-                    expect(todos.length).toBe(1);
+                Todo.findById(todos[0]._id.toHexString()).then((todo) => {
+                    expect(todo).toNotExist();
                     done()
                 }).catch((e) => done(e));
             })
