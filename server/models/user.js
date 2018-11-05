@@ -95,3 +95,6 @@ var User = mongoose.model('User', UserSchema);
 module.exports = {
     User
 }
+
+// var salt = bcrypt.genSaltSync(10);
+// var hash = bcrypt.hashSync(user.password, salt);
